@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(243, 243, 233);
+}
+.content{
+    width: 70%;
+    margin: 0 auto;
+    height: 100vh;
+}
+#addButton,#editButton{
+    width: 120px;
+}
+#editBlock{
+    display: none;
+}
+#edfitInput{
+    width: 300px;
+}

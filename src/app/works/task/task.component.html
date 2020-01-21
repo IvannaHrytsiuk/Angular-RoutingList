@@ -1,0 +1,40 @@
+<div class="content">
+    <h1>Plan your day!</h1>
+    <h3>User: Ivan Ivanov. Count of task {{arr.length}}</h3>
+    <hr>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="newTask" name="newTask">
+        <div class="input-group-append">
+            <button class="btn btn-warning" id="addButton" type="button" (click)="addNewTask()">Add</button>
+        </div>
+    </div>
+    <hr>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task</th>
+                <th scope="col">Check</th>
+                <th scope="col">Done/In progress</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of arr; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{list.name}}</td>
+                <td><input type="checkbox" [checked]='list.isDone'(change)='list.invert()' ></td>
+                <td [ngStyle]="{'color': list.color}">{{list.isDone ? 'Done' : 'In progress'}}</td> 
+                <td><button type='button' class='btn btn-warning' (click)="editTask(i)">Edit</button></td>
+                <td><button type='button' class='btn btn-danger' [disabled]='!list.isDone' (click)='deleteTask(i)'>Delete</button></td> 
+            </tr>
+        </tbody>
+    </table>
+    <div class="input-group mb-3" [ngStyle]="{'display': display}" >
+        <input type="text" class="form-control" id="edfitInput" [(ngModel)]="redagTask" name="redagTask">
+        <div class="input-group-append">
+            <button class="btn btn-success" id="editButton" type="button" (click)="saveEditTask()">Save</button>
+        </div>
+    </div>
+</div>

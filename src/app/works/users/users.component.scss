@@ -1,0 +1,24 @@
+.loginBlock, .tableBlock{
+    display: inline-block;
+}
+.loginBlock{
+    margin:0px 9%;
+    width: 30%;
+}
+.tableBlock{
+    margin: 0px 6%;
+    width: 38%;
+position: absolute;
+}
+.headLoginBlock{
+    margin: 15px 0 5px 0;
+}
+.addUserButton{
+    margin-top: 15px !important;
+}
+.editUserButton{
+    margin-top: 15px !important;
+}
+#idSavebutton{
+    display: none;
+}
